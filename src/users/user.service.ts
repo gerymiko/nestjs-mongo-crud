@@ -10,6 +10,7 @@ import { CreateUserDto } from './user.dto';
 import { User as UserModel } from './user.model';
 import { StatusCodes } from 'http-status-codes';
 import { handleValidationError } from '../utils/validation-error.util';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable()
 export class UsersService {
@@ -19,7 +20,12 @@ export class UsersService {
 
   // Create a new user
   async create(createUserDto: CreateUserDto): Promise<User> {
-    const createdUser = new this.userModel(createUserDto);
+    const { password, ...userData } = createUserDto;
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const createdUser = new this.userModel({
+      ...userData,
+      password: hashedPassword,
+    });
     try {
       return await createdUser.save();
     } catch (error) {
@@ -46,6 +52,11 @@ export class UsersService {
         `Error fetching user: ${error.message}`,
       );
     }
+  }
+
+  // Find user by username
+  async findByUsername(username: string): Promise<User> {
+    return this.userModel.findOne({ username }).exec();
   }
 
   // Update user by id
