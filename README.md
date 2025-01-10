@@ -19,8 +19,50 @@ This project demonstrates a basic CRUD (Create, Read, Update, Delete) applicatio
 
 Start the MongoDB server (make sure MongoDB is installed and running on your machine):
 
+```sh
+mongod
+```
+
 Running the app
+
+# development
+
+```sh
+npm run start
+```
+
+# watch mode
+
+```sh
+npm run start:dev
+```
+
+# production mode
+
+```sh
+npm run start:prod
+```
+
 Test
+
+# unit tests
+
+```sh
+npm run test
+```
+
+# e2e tests
+
+```sh
+npm run test:e2e
+```
+
+# test coverage
+
+```sh
+npm run test:cov
+```
+
 API Endpoints
 POST /users - Create a new user
 GET /users - Retrieve all users
