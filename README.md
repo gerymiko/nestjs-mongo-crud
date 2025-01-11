@@ -25,47 +25,48 @@ mongod
 
 Running the app
 
-# development
+## Development
 
 ```sh
 npm run start
 ```
 
-# watch mode
+## Watch mode
 
 ```sh
 npm run start:dev
 ```
 
-# production mode
+## Production mode
 
 ```sh
 npm run start:prod
 ```
 
-Test
+# Test
 
-# unit tests
+## Unit tests
 
 ```sh
 npm run test
 ```
 
-# e2e tests
+## e2e tests
 
 ```sh
 npm run test:e2e
 ```
 
-# test coverage
+## Test coverage
 
 ```sh
 npm run test:cov
 ```
 
-API Endpoints
-POST /users - Create a new user
-GET /users - Retrieve all users
-GET /users/:id - Retrieve a user by ID
-PUT /users/:id - Update a user by ID
-DELETE /users/:id - Delete a user by ID
+## API Endpoints
+
+- `POST /users` - Create a new user
+- `GET /users` - Retrieve all users
+- `GET /users/:id` - Retrieve a user by ID
+- `PUT /users/:id` - Update a user by ID
+- `DELETE /users/:id` - Delete a user by ID
