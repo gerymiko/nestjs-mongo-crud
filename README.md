@@ -15,9 +15,13 @@ This project demonstrates a basic CRUD (Create, Read, Update, Delete) applicatio
    cd nestjs-mongo-crud
    ```
 
-   Install the dependencies:
+2. Install the dependencies:
 
-Start the MongoDB server (make sure MongoDB is installed and running on your machine):
+```sh
+npm install
+```
+
+3. Start the MongoDB server (make sure MongoDB is installed and running on your machine):
 
 ```sh
 mongod
@@ -25,41 +29,27 @@ mongod
 
 Running the app
 
-## Development
-
 ```sh
+# development
 npm run start
-```
 
-## Watch mode
-
-```sh
+# watch mode
 npm run start:dev
-```
 
-## Production mode
-
-```sh
+# production mode
 npm run start:prod
 ```
 
-# Test
-
-## Unit tests
+## Test
 
 ```sh
+# unit tests
 npm run test
-```
 
-## e2e tests
-
-```sh
+# e2e tests
 npm run test:e2e
-```
 
-## Test coverage
-
-```sh
+# test coverage
 npm run test:cov
 ```
 
