@@ -10,17 +10,17 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async validateUser(username: string, pass: string): Promise<any> {
-    const user = await this.usersService.findByUsername(username);
-    if (user && bcrypt.compareSync(pass, user.password)) {
-      const { password, ...result } = user.toObject();
+  async validateUser(email: string, password: string): Promise<any> {
+    const user = await this.usersService.findByEmail(email);
+    if (user && bcrypt.compareSync(password, user.password)) {
+      const { password, ...result } = user.toObject(); // eslint-disable-line @typescript-eslint/no-unused-vars
       return result;
     }
     return null;
   }
 
   async login(user: any) {
-    const payload = { username: user.username, sub: user.userId };
+    const payload = { email: user.email, sub: user._id };
     return {
       access_token: this.jwtService.sign(payload),
     };

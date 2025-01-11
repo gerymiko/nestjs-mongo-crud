@@ -54,9 +54,9 @@ export class UsersService {
     }
   }
 
-  // Find user by username
-  async findByUsername(username: string): Promise<User> {
-    return this.userModel.findOne({ username }).exec();
+  // Find user by email
+  async findByEmail(email: string): Promise<User> {
+    return this.userModel.findOne({ email }).exec();
   }
 
   // Update user by id
