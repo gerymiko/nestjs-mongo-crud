@@ -10,10 +10,13 @@ export class LoggerMiddleware implements NestMiddleware {
     console.log(`Body: ${JSON.stringify(req.body)}`);
     console.log(`Headers: ${JSON.stringify(req.headers)}`);
 
-    res.on('finish', () => {
+    const originalSend = res.send.bind(res);
+    res.send = (body) => {
       console.log(`Response...`);
       console.log(`Status: ${res.statusCode}`);
-    });
+      console.log(`Body: ${body}`);
+      return originalSend(body);
+    };
 
     next();
   }
