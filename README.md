@@ -10,10 +10,10 @@ This project demonstrates a basic CRUD (Create, Read, Update, Delete) applicatio
 
 1. Clone the repository:
 
-   ```sh
-   git clone https://github.com/your-repo/nestjs-mongo-crud.git
-   cd nestjs-mongo-crud
-   ```
+```sh
+git clone https://github.com/your-repo/nestjs-mongo-crud.git
+cd nestjs-mongo-crud
+```
 
 2. Install the dependencies:
 
@@ -27,7 +27,7 @@ npm install
 mongod
 ```
 
-Running the app
+## Running the app
 
 ```sh
 # development

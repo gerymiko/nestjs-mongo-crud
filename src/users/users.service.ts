@@ -5,9 +5,9 @@ import {
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { User } from './user.interface';
-import { CreateUserDto } from './user.dto';
-import { User as UserModel } from './user.model';
+import { User } from './users.interface';
+import { CreateUserDto } from './users.dto';
+import { User as UserModel } from './users.model';
 import { StatusCodes } from 'http-status-codes';
 import { handleValidationError } from '../utils/validation-error.util';
 import * as bcrypt from 'bcryptjs';
